@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lucky draw</title>
+        <style>
+            body{
+                background: url("bg.jpg") no-repeat;
+                background-size: 100%;
+            }
+            #box{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: -300px 0 0 -300px;
+                width: 600px;
+                height: 300px;
+                line-height: 300px;
+                text-align: center;
+                font-size: 3em;
+                text-shadow: 0 0 50px #ffff00;
+                color: rgba(50,50,50,0.8);
+                background: rgba(255,255,255,0.75);
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(255,255,255,0.5);
+            }
+            h1{
+                text-align: center;
+                color: #000000;
+                letter-spacing: 10px;
+            }
+            #btn{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 200px;
+                height: 50px;
+                font-size: 1.2em;
+                margin: 100px 0 0 -100px;
+                background: grey;
+                border: grey;
+                border-radius: 15px;
+                color: yellow;
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>3rd anniversary sure-win lucky draw</h1>
+        <div id="box">
+        </div>
+        <input id="btn" type="button" value="Go!"></button>
+        <script>
+            /*
+            --- CREDITS ---
+            Code modified from: https://www.programmersought.com/article/85747899659/
+            Background image: https://www.pinterest.com/pin/486740672227936339/
+            */
+            var arr = [
+                "Prize 1",
+                "Prize 2",
+                "Prize 3",
+                "Prize 4",
+                "Prize 5"
+            ];
+            function fix_prize() {
+            }
+            var click_count = 0;
+            document.getElementById('btn').addEventListener('click',function (){
+                if (click_count == 0) {
+                    // Flash possible prizes
+                    flash = setInterval(function (){
+                        document.getElementById('box').innerText = arr[parseInt(Math.random() * arr.length)];
+                    }, 10)
+                } else if (click_count == 1) {
+                    // Fix prize
+                    clearInterval(flash);
+                    document.getElementById('box').innerText = arr[parseInt(Math.random() * arr.length)];
+                    document.getElementById('btn').value = "Congratulations!";
+                }
+                click_count++;
+            })
+        </script>
+    </body>
+</html>
+
