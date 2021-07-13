@@ -43,6 +43,13 @@
                 color: yellow;
                 outline: none;
             }
+            #links{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                font-size: 1.2em;
+                margin: 200px 0 0 -200px;
+            }
         </style>
     </head>
     <body>
@@ -50,6 +57,15 @@
         <div id="box">
         </div>
         <input id="btn" type="button" value="Go!"></button>
+        <div id="links">
+        Links:
+        <br />
+        <a href="https://tinyurl.com/cookingprize">Couple cooking class</a>
+        <br />
+        <a href="https://tinyurl.com/artjamprize">Art jamming</a>
+        <br />
+        <a href="https://tinyurl.com/teaprize">Tea crafting</a>
+        </div>
         <script>
             /*
             --- CREDITS ---
@@ -57,11 +73,11 @@
             Background image: https://www.pinterest.com/pin/486740672227936339/
             */
             var arr = [
-                "Prize 1",
-                "Prize 2",
-                "Prize 3",
-                "Prize 4",
-                "Prize 5"
+                "VPN Subscription",
+                "Fancy meal",
+                "Couple cooking class",
+                "Art jamming",
+                "Tea crafting"
             ];
             function fix_prize() {
             }
